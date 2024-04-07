@@ -1,11 +1,13 @@
 package exercise;
 
 import org.junit.jupiter.api.Test;
-import static org.assertj.core.api.Assertions.assertThat;
-import java.util.Map;
+
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.ArrayList;
+import java.util.Map;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 class AppTest {
@@ -46,7 +48,6 @@ class AppTest {
         String actual2 = span.toString();
         String expected2 = "<span></span>";
         assertThat(actual2).isEqualTo(expected2);
-
     }
 
     @Test
@@ -57,8 +58,8 @@ class AppTest {
 
 
         List<Tag> children = List.of(
-            new SingleTag("br", Map.of("id", "s")),
-            new SingleTag("hr", Map.of("class", "a-5"))
+                new SingleTag("br", Map.of("id", "s")),
+                new SingleTag("hr", Map.of("class", "a-5"))
         );
 
         Tag div = new PairedTag("div", attributes, "", children);

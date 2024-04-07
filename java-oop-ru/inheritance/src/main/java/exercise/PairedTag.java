@@ -12,18 +12,17 @@ class PairedTag extends Tag {
 
     public PairedTag(String tagName, Map<String, String> tagAttributes,
                      String body, List<Tag> children) {
-        super.setTagName(tagName);
-        super.setTagAttributes(tagAttributes);
+        super(tagName, tagAttributes);
         this.body = body;
         this.children = children;
     }
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        children.forEach(c -> stringBuilder.append(c.getTagAttributes()));
-        return format("<%s %s>%s</%s>", getTagName(), getStringOfAttributes(),
-                stringBuilder, getTagName());
+        StringBuilder childAttributes = new StringBuilder();
+        children.forEach(c -> childAttributes.append(c.toString()));
+        return format("<%s%s>%s%s</%s>", getTagName(), getStringOfAttributes(),
+                childAttributes, body, getTagName());
     }
 }
 // END

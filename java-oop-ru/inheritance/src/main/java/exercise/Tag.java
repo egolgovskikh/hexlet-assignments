@@ -1,5 +1,6 @@
 package exercise;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,7 +10,7 @@ import static java.lang.String.format;
 
 // BEGIN
 @Getter
-@Setter
+@AllArgsConstructor
 class Tag {
     private String tagName;
     private Map<String, String> tagAttributes;

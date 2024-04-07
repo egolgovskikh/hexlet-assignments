@@ -8,8 +8,7 @@ import static java.lang.String.format;
 class SingleTag extends Tag {
 
     public SingleTag(String tagName, Map<String, String> tagAttributes) {
-        super.setTagName(tagName);
-        super.setTagAttributes(tagAttributes);
+        super(tagName, tagAttributes);
     }
 
     @Override
